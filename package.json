@@ -1,0 +1,22 @@
+{
+  "name": "your-app",
+  "version": "1.0.0",
+  "scripts": {
+    "check": "node src/check-mysql.js",
+    "sync": "node src/sync-service.js",
+    "verify": "node src/verify-data.js",
+    "start": "pm2 start npm --name 'app' -- run sync",
+    "stop": "pm2 stop app",
+    "restart": "pm2 restart app",
+    "delete": "pm2 delete app",
+    "save": "pm2 save",
+    "startup": "pm2 startup && pm2 save"
+  },
+  "dependencies": {
+    "firebase": "^10.7.1",
+    "firebase-admin": "^13.0.1",
+    "mysql2": "^3.6.5",
+    "node-schedule": "^2.1.1",
+    "pm2": "^5.4.3"
+  }
+}
