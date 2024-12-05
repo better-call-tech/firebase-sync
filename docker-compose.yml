@@ -24,5 +24,15 @@ services:
       retries: 5
     restart: unless-stopped
 
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: firebase_sync_app
+    environment:
+      - NODE_ENV=production
+      - DB_HOST=mysql
+    restart: always
+
 volumes:
   mysql_data: 
